@@ -314,4 +314,95 @@
     opacity: 0.55;
     cursor: not-allowed;
   }
+
+  .home-hero-bg {
+    background: linear-gradient(
+        135deg,
+        rgba(124, 58, 237, 0.2) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(244, 114, 182, 0.12) 100%
+      ),
+      radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.25), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(103, 232, 249, 0.12), transparent 40%);
+    background-color: #1a1535;
+  }
+
+  .home-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .home-orb-a {
+    width: 280px;
+    height: 280px;
+    top: -80px;
+    right: -60px;
+    background: rgba(232, 121, 249, 0.35);
+    animation: homeFloat 8s ease-in-out infinite;
+  }
+
+  .home-orb-b {
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    left: -40px;
+    background: rgba(124, 58, 237, 0.4);
+    animation: homeFloat 10s ease-in-out infinite reverse;
+  }
+
+  .home-orb-c {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 45%;
+    background: rgba(103, 232, 249, 0.2);
+    animation: homeFloat 6s ease-in-out infinite 1s;
+  }
+
+  @keyframes homeFloat {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(12px, -16px) scale(1.08);
+    }
+  }
+
+  .home-cta-primary {
+    @apply inline-block rounded-xl px-8 py-3.5 font-semibold text-white border transition-all duration-200;
+    background: linear-gradient(135deg, #7c3aed, #a855f7, #e879f9);
+    border-color: rgba(232, 121, 249, 0.45);
+    box-shadow: 0 0 32px rgba(168, 85, 247, 0.4);
+  }
+
+  .home-cta-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 48px rgba(232, 121, 249, 0.5);
+  }
+
+  .home-cta-secondary {
+    @apply inline-block rounded-xl px-8 py-3.5 font-semibold border transition-all duration-200;
+    background: rgba(18, 16, 42, 0.8);
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #e9d5ff;
+  }
+
+  .home-cta-secondary:hover {
+    border-color: rgba(232, 121, 249, 0.6);
+    background: rgba(34, 27, 74, 0.9);
+    color: #f5f3ff;
+  }
+
+  .home-role-card {
+    transform: translateY(0);
+  }
+
+  .home-role-card:hover {
+    transform: translateY(-4px);
+  }
 }
