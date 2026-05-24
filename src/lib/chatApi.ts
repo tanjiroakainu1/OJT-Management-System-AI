@@ -17,6 +17,17 @@ export async function sendChatMessage(
   };
 
   if (!res.ok) {
+    if (res.status === 503) {
+      throw new Error(
+        data.error ??
+          'AI assistant is not configured on the server. Add OPENROUTER_API_KEY in Vercel environment variables.'
+      );
+    }
+    if (res.status === 404) {
+      throw new Error(
+        'Chat API not found. If deployed, ensure /api/chat is configured and redeploy.'
+      );
+    }
     throw new Error(data.error ?? 'The assistant is temporarily unavailable. Please try again.');
   }
 

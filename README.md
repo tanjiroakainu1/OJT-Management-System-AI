@@ -38,7 +38,15 @@ OPENROUTER_API_KEY=your_key_here
 OPENROUTER_MODEL=google/gemini-2.0-flash-001
 ```
 
-**Vercel:** add the same variables under Project → Settings → Environment Variables (`OPENROUTER_API_KEY`, optional `OPENROUTER_MODEL`).
+**Vercel (required for AI chatbot on production):**
+
+1. Open your project on [vercel.com](https://vercel.com) → **Settings** → **Environment Variables**
+2. Add:
+   - `OPENROUTER_API_KEY` = your OpenRouter API key
+   - `OPENROUTER_MODEL` = `google/gemini-2.0-flash-001` (optional)
+3. **Redeploy** the project (Deployments → ⋯ → Redeploy)
+
+Without `OPENROUTER_API_KEY`, the chatbot will show a configuration error on the live site.
 
 ## Deploy to Vercel
 
