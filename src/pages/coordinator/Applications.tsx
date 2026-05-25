@@ -24,7 +24,7 @@ export default function CoordinatorApplications() {
   return (
     <>
       <PageHeader title="Manage Applications" />
-      <div className="flex gap-2 mb-4">
+      <div className="btn-row mb-4">
         {['', 'pending', 'approved', 'rejected'].map((s) => (
           <Link key={s} to={s ? `/coordinator/applications?status=${s}` : '/coordinator/applications'} className={`px-3 py-1 rounded text-sm ${status === s ? 'filter-pill-active' : 'filter-pill'}`}>{s || 'All'}</Link>
         ))}

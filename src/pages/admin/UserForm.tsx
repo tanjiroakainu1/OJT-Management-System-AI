@@ -160,7 +160,7 @@ export default function UserForm() {
               <Input label="Contact" value={form.contact} onChange={(e) => setForm({ ...form, contact: e.target.value })} />
             </>
           )}
-          <div className="flex gap-2">
+          <div className="btn-row">
             <Button type="submit">{isEdit ? 'Save' : 'Create'}</Button>
             <Link to="/admin/users"><Button type="button" variant="secondary">Cancel</Button></Link>
           </div>

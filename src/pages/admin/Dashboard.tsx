@@ -23,7 +23,7 @@ export default function AdminDashboard() {
   return (
     <>
       <PageHeader title="Admin Dashboard" subtitle="System Overview and Statistics" />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         <StatCard label="Students" value={stats.total_students} to="/admin/students" color="bg-blue-600" />
         <StatCard label="Companies" value={stats.total_companies} to="/admin/companies" color="bg-green-600" />
         <StatCard label="Coordinators" value={stats.total_coordinators} to="/admin/users?role=coordinator" color="bg-cyan-600" />

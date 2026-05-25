@@ -106,7 +106,7 @@ export default function CoordinatorRequirements() {
 
       <div className="flex justify-between items-center mb-4 flex-wrap gap-2">
         <h2 className="text-lg font-semibold text-zinc-100">Student Submissions</h2>
-        <div className="flex gap-2 flex-wrap">
+        <div className="btn-row">
           {['', 'pending', 'approved', 'rejected'].map((s) => (
             <Link
               key={s}

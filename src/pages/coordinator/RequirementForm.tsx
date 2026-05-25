@@ -87,7 +87,7 @@ export default function RequirementForm() {
             onChange={(e) => setForm({ ...form, deadline: e.target.value })}
             required
           />
-          <div className="flex gap-2">
+          <div className="btn-row">
             <Button type="submit">{isEdit ? 'Save Changes' : 'Create Requirement'}</Button>
             <Link to="/coordinator/requirements">
               <Button type="button" variant="secondary">Cancel</Button>

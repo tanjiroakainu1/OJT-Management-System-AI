@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
-    @apply min-h-screen antialiased;
+    @apply min-h-screen antialiased overflow-x-hidden;
     color: #f5f3ff;
     background-color: #0b0a1a;
     background-image: radial-gradient(
@@ -71,8 +75,47 @@
     color: #c4b5fd;
   }
 
+  .btn-touch {
+    @apply inline-flex items-center justify-center min-h-[44px] min-w-[44px] shrink-0;
+    touch-action: manipulation;
+  }
+
+  .btn-row {
+    @apply flex flex-wrap items-center gap-2 sm:gap-3;
+  }
+
+  .btn-row-end {
+    @apply flex flex-wrap items-center justify-end gap-2 sm:gap-3;
+  }
+
+  .header-nav-btn {
+    @apply btn-touch rounded-xl px-3 py-2 text-xs font-medium transition sm:px-4 sm:text-sm;
+    touch-action: manipulation;
+  }
+
+  .header-nav-btn-outline {
+    @apply header-nav-btn border text-violet-200;
+    border-color: rgba(139, 92, 246, 0.4);
+  }
+
+  .header-nav-btn-outline:hover {
+    border-color: rgba(232, 121, 249, 0.5);
+    color: #f5d0fe;
+  }
+
+  .header-nav-btn-primary {
+    @apply header-nav-btn font-semibold text-white border;
+    background: linear-gradient(135deg, #7c3aed, #a855f7, #e879f9);
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+
+  .header-nav-btn-primary:hover {
+    transform: scale(1.02);
+  }
+
   .filter-pill {
-    @apply px-3 py-1 rounded-full text-sm text-violet-300 border transition-all;
+    @apply px-3 py-2 min-h-[40px] rounded-full text-xs sm:text-sm text-violet-300 border transition-all shrink-0;
     background-color: #1a1535;
     border-color: rgba(139, 92, 246, 0.35);
   }
@@ -83,14 +126,15 @@
   }
 
   .filter-pill-active {
-    @apply px-3 py-1 rounded-full text-sm text-white border font-medium;
+    @apply px-3 py-2 min-h-[40px] rounded-full text-xs sm:text-sm text-white border font-medium shrink-0;
     background-image: linear-gradient(135deg, #a855f7, #e879f9, #f472b6);
     border-color: rgba(232, 121, 249, 0.5);
     box-shadow: 0 0 24px rgba(168, 85, 247, 0.35);
   }
 
   .quick-action-btn {
-    @apply block text-center py-3 rounded-xl text-sm font-medium text-white border transition-all hover:scale-[1.02];
+    @apply block text-center min-h-[44px] py-3 rounded-xl text-sm font-medium text-white border transition-all hover:scale-[1.02];
+    touch-action: manipulation;
     background-image: linear-gradient(135deg, #7c3aed, #a855f7, #e879f9);
     border-color: rgba(168, 85, 247, 0.5);
     box-shadow: 0 0 24px rgba(168, 85, 247, 0.35);
@@ -110,7 +154,7 @@
   }
 
   .page-title {
-    @apply text-2xl font-bold tracking-wide;
+    @apply text-xl sm:text-2xl font-bold tracking-wide break-words;
     font-family: 'Outfit', system-ui, sans-serif;
     color: #f5f3ff;
   }
@@ -209,7 +253,8 @@
   }
 
   .dashboard-link {
-    @apply block w-full text-center py-2 rounded-xl text-sm font-medium border transition-all;
+    @apply block w-full text-center min-h-[44px] py-2.5 rounded-xl text-sm font-medium border transition-all;
+    touch-action: manipulation;
     background-color: #221b4a;
     border-color: rgba(139, 92, 246, 0.4);
     color: #e9d5ff;
@@ -298,7 +343,8 @@
   }
 
   .auth-submit-btn {
-    @apply w-full py-3 rounded-xl font-semibold text-white border transition-all duration-200;
+    @apply w-full min-h-[48px] py-3 rounded-xl font-semibold text-white border transition-all duration-200;
+    touch-action: manipulation;
     background: linear-gradient(135deg, #7c3aed, #a855f7, #e879f9);
     border-color: rgba(232, 121, 249, 0.4);
     box-shadow: 0 0 28px rgba(168, 85, 247, 0.35);
@@ -374,7 +420,8 @@
   }
 
   .home-cta-primary {
-    @apply inline-block rounded-xl px-8 py-3.5 font-semibold text-white border transition-all duration-200;
+    @apply inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto rounded-xl px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white border transition-all duration-200;
+    touch-action: manipulation;
     background: linear-gradient(135deg, #7c3aed, #a855f7, #e879f9);
     border-color: rgba(232, 121, 249, 0.45);
     box-shadow: 0 0 32px rgba(168, 85, 247, 0.4);
@@ -386,7 +433,8 @@
   }
 
   .home-cta-secondary {
-    @apply inline-block rounded-xl px-8 py-3.5 font-semibold border transition-all duration-200;
+    @apply inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto rounded-xl px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold border transition-all duration-200;
+    touch-action: manipulation;
     background: rgba(18, 16, 42, 0.8);
     border-color: rgba(139, 92, 246, 0.5);
     color: #e9d5ff;

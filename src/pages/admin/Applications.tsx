@@ -31,7 +31,7 @@ export default function AdminApplications() {
   return (
     <>
       <PageHeader title="OJT Applications" />
-      <div className="flex gap-2 mb-4 flex-wrap text-sm">
+      <div className="btn-row mb-4 text-sm">
         {['', 'pending', 'approved', 'rejected', 'active', 'completed'].map((s) => (
           <Link
             key={s}

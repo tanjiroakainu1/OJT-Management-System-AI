@@ -211,7 +211,7 @@ export default function AiChatbot() {
           onSubmit={handleSubmit}
           className="shrink-0 border-t border-violet-500/30 bg-[#12102a]/90 p-3"
         >
-          <div className="flex gap-2 items-end">
+          <div className="flex gap-2 items-end min-w-0">
             <textarea
               ref={inputRef}
               value={input}
@@ -230,7 +230,7 @@ export default function AiChatbot() {
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="shrink-0 flex h-[42px] w-[42px] items-center justify-center rounded-xl bg-gradient-to-br from-[#7c3aed] to-[#e879f9] text-white disabled:opacity-40 shadow-[0_0_16px_rgba(168,85,247,0.35)] hover:scale-105 active:scale-95 transition"
+              className="btn-touch shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#7c3aed] to-[#e879f9] text-white disabled:opacity-40 shadow-[0_0_16px_rgba(168,85,247,0.35)] hover:scale-105 active:scale-95 transition"
               aria-label="Send message"
             >
               ➤
@@ -245,7 +245,7 @@ export default function AiChatbot() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className={`fixed z-[60] bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-400/50 bg-gradient-to-br from-[#7c3aed] via-[#a855f7] to-[#e879f9] text-2xl text-white shadow-[0_0_32px_rgba(168,85,247,0.5)] transition-all duration-300 hover:scale-110 active:scale-95
+        className={`fixed z-[60] bottom-4 right-4 sm:bottom-6 sm:right-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-400/50 bg-gradient-to-br from-[#7c3aed] via-[#a855f7] to-[#e879f9] text-2xl text-white shadow-[0_0_32px_rgba(168,85,247,0.5)] transition-all duration-300 hover:scale-110 active:scale-95 touch-manipulation
           ${open ? 'scale-90 sm:scale-100' : 'animate-pulseGlow'}`}
         aria-label={open ? 'Close assistant' : 'Open CSU OJT Assistant'}
         aria-expanded={open}

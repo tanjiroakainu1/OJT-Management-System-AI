@@ -167,7 +167,8 @@ export default function AdminReports() {
 
       <Card title="Report Data">
         {type === 'student_hours' && (
-          <table className="data-table min-w-full text-sm">
+          <div className="-mx-4 sm:-mx-5 px-4 sm:px-5 overflow-x-auto">
+          <table className="data-table min-w-[520px] w-full text-sm">
             <thead><tr className="border-b"><th className="text-left py-2">Student</th><th>ID</th><th>Course</th><th>Days</th><th>Hours</th></tr></thead>
             <tbody>
               {(reportData as { name: string; student_id: string; course: string; days: number; hours: string }[]).map((r, i) => (
@@ -175,9 +176,11 @@ export default function AdminReports() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
         {type === 'company_placements' && (
-          <table className="data-table min-w-full text-sm">
+          <div className="-mx-4 sm:-mx-5 px-4 sm:px-5 overflow-x-auto">
+          <table className="data-table min-w-[360px] w-full text-sm">
             <thead><tr className="border-b"><th className="text-left py-2">Company</th><th>Active</th><th>Total</th></tr></thead>
             <tbody>
               {(reportData as { name: string; active: number; total: number }[]).map((r, i) => (
@@ -185,9 +188,11 @@ export default function AdminReports() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
         {type === 'course_summary' && (
-          <table className="data-table min-w-full text-sm">
+          <div className="-mx-4 sm:-mx-5 px-4 sm:px-5 overflow-x-auto">
+          <table className="data-table min-w-[280px] w-full text-sm">
             <thead><tr className="border-b"><th className="text-left py-2">Course</th><th>Students</th></tr></thead>
             <tbody>
               {(reportData as { course: string; count: number }[]).map((r, i) => (
@@ -195,9 +200,11 @@ export default function AdminReports() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
         {type === 'activity_log' && (
-          <table className="data-table min-w-full text-sm">
+          <div className="-mx-4 sm:-mx-5 px-4 sm:px-5 overflow-x-auto">
+          <table className="data-table min-w-[560px] w-full text-sm">
             <thead><tr className="border-b"><th>Email</th><th>Action</th><th>Entity</th><th>Date</th></tr></thead>
             <tbody>
               {(reportData as { user?: string; action: string; entity: string; date: string }[]).map((r, i) => (
@@ -205,6 +212,7 @@ export default function AdminReports() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </Card>
     </>

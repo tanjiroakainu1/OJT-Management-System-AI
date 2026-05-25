@@ -284,7 +284,7 @@ export default function AttendanceReport() {
                   {selectedStudent.student_id} · {selectedStudent.course}
                 </p>
               </div>
-              <div className="flex gap-2 shrink-0">
+              <div className="btn-row shrink-0">
                 <Link
                   to={`/supervisor/students/${selectedStudent.id}/logs`}
                   className="quick-action-btn text-sm"
@@ -303,7 +303,7 @@ export default function AttendanceReport() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
             <StatCard label="Total Days" value={logs.length} color="bg-cyan-600" />
             <StatCard
               label="Total Hours"

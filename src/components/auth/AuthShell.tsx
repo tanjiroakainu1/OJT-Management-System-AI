@@ -41,7 +41,7 @@ export function AuthShell({ variant, title, subtitle, children, footer }: AuthSh
       : { label: 'Have an account?', cta: 'Sign in', to: '/login' };
 
   return (
-    <div className="auth-page w-full max-w-5xl mx-auto">
+    <div className="auth-page w-full max-w-5xl mx-auto px-3 sm:px-4 min-w-0">
       <div className="auth-card-grid grid lg:grid-cols-5 gap-0 lg:gap-0 overflow-hidden rounded-3xl border border-violet-500/35 shadow-[0_0_60px_rgba(168,85,247,0.2)]">
         {/* Brand panel */}
         <div className="auth-panel hidden lg:flex lg:col-span-2 flex-col justify-between p-8 relative overflow-hidden">
@@ -79,7 +79,7 @@ export function AuthShell({ variant, title, subtitle, children, footer }: AuthSh
         </div>
 
         {/* Form panel */}
-        <div className="lg:col-span-3 bg-[#1a1535]/95 backdrop-blur-sm p-6 sm:p-8 relative">
+        <div className="lg:col-span-3 bg-[#1a1535]/95 backdrop-blur-sm p-5 sm:p-8 relative min-w-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(232,121,249,0.08),transparent_50%)] pointer-events-none" />
 
           {/* Mobile header */}

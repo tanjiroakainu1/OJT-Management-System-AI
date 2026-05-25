@@ -24,7 +24,7 @@ export default function SupervisorViewStudent() {
           <p className="text-sm">Evaluations: {evals.length}</p>
         </Card>
       </div>
-      <div className="flex gap-4 mt-4">
+      <div className="btn-row mt-4">
         <Link to={`/supervisor/students/${student.id}/logs`} className="link-back">View Logs</Link>
         <Link to={`/supervisor/evaluate/${student.id}`} className="link-edit text-sm">Evaluate</Link>
         <Link to="/supervisor/students" className="text-body text-sm">← Back</Link>

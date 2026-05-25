@@ -67,7 +67,7 @@ export function HomeLanding() {
   };
 
   return (
-    <div className="home-landing -mx-4 sm:-mx-6 px-4 sm:px-6 pb-4">
+    <div className="home-landing -mx-3 sm:-mx-4 md:-mx-6 px-3 sm:px-4 md:px-6 pb-4 min-w-0">
       {/* Hero */}
       <section className="home-hero relative overflow-hidden rounded-3xl border border-violet-500/30 mb-12">
         <div className="home-hero-bg absolute inset-0 pointer-events-none" />
@@ -75,13 +75,13 @@ export function HomeLanding() {
         <div className="home-orb home-orb-b" />
         <div className="home-orb home-orb-c" />
 
-        <div className="relative z-10 grid lg:grid-cols-2 gap-10 p-8 sm:p-12 lg:p-14 items-center">
-          <div className="text-center lg:text-left">
+        <div className="relative z-10 grid lg:grid-cols-2 gap-6 sm:gap-10 p-5 sm:p-8 md:p-12 lg:p-14 items-center">
+          <div className="text-center lg:text-left min-w-0">
             <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-[#12102a]/80 px-3 py-1 text-xs font-medium text-violet-200 mb-5">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               {UNIVERSITY}
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-display text-[#f5f3ff] leading-[1.1] tracking-tight">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-display text-[#f5f3ff] leading-[1.1] tracking-tight">
               On-the-Job Training,{' '}
               <span className="candy-title block sm:inline">reimagined.</span>
             </h1>
@@ -89,11 +89,11 @@ export function HomeLanding() {
               {APP_SHORT_NAME} connects students, coordinators, supervisors, and admins —
               applications, logs, requirements, and evaluations in one beautiful workspace.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3">
-              <Link to="/register" className="home-cta-primary w-full sm:w-auto text-center">
+            <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 max-w-md mx-auto lg:mx-0 lg:max-w-none">
+              <Link to="/register" className="home-cta-primary text-center">
                 Start as student →
               </Link>
-              <Link to="/login" className="home-cta-secondary w-full sm:w-auto text-center">
+              <Link to="/login" className="home-cta-secondary text-center">
                 Sign in
               </Link>
             </div>
@@ -103,7 +103,7 @@ export function HomeLanding() {
           </div>
 
           {/* Decorative stats panel */}
-          <div className="relative hidden sm:block">
+          <div className="relative hidden xs:block">
             <div className="home-stats-panel rounded-2xl border border-violet-500/30 bg-[#0b0a1a]/60 backdrop-blur-md p-6 shadow-[0_0_48px_rgba(168,85,247,0.2)]">
               <p className="text-xs uppercase tracking-widest text-fuchsia-300/90 font-semibold mb-4">
                 Platform highlights
@@ -149,7 +149,7 @@ export function HomeLanding() {
             Built for every role
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {ROLE_CARDS.map((r) => (
             <Link
               key={r.title}
@@ -185,7 +185,7 @@ export function HomeLanding() {
           <h2 className="text-xl font-bold font-display text-[#f5f3ff] mb-6 text-center">
             Everything you need for OJT
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {FEATURES.map((f) => (
               <div
                 key={f.label}

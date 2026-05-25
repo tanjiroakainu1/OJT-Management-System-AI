@@ -33,12 +33,14 @@ export default function ManageUsers() {
   return (
     <>
       <PageHeader title="Manage Users" subtitle={roleFilter ? `Role: ${roleFilter}` : 'All users'} />
-      <div className="flex gap-2 mb-4 flex-wrap">
+      <div className="btn-row mb-4">
         <Link to="/admin/users"><Button variant="secondary">All</Button></Link>
         <Link to="/admin/users?role=admin"><Button variant="secondary">Admin</Button></Link>
         <Link to="/admin/users?role=coordinator"><Button variant="secondary">Coordinator</Button></Link>
         <Link to="/admin/users?role=supervisor"><Button variant="secondary">Supervisor</Button></Link>
-        <Link to="/admin/users/new" className="ml-auto"><Button>Add User</Button></Link>
+        <Link to="/admin/users/new" className="w-full xs:w-auto xs:ml-auto shrink-0">
+          <Button className="w-full xs:w-auto">Add User</Button>
+        </Link>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4 mb-6">

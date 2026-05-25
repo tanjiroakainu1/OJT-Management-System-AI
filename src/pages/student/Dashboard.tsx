@@ -35,7 +35,7 @@ export default function StudentDashboard() {
     <>
       <PageHeader title="Student Dashboard" subtitle={`Welcome, ${user?.full_name} 🍬`} />
       <Card>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {tiles.map((t, i) => (
             <Link
               key={t.to}

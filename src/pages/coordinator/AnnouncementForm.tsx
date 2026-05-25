@@ -99,7 +99,7 @@ export default function AnnouncementForm() {
               Posting as <span className="font-medium">{user.full_name}</span> ({user.email})
             </p>
           )}
-          <div className="flex gap-2">
+          <div className="btn-row">
             <Button type="submit">{isEdit ? 'Save Changes' : 'Publish Announcement'}</Button>
             <Link to="/coordinator/announcements">
               <Button type="button" variant="secondary">Cancel</Button>

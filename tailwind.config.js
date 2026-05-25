@@ -16,6 +16,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '475px',
+      },
       colors: {
         galaxy: {
           deep: '#0b0a1a',

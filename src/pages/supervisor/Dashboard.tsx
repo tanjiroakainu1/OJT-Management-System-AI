@@ -51,7 +51,7 @@ export default function SupervisorDashboard() {
   return (
     <>
       <PageHeader title="Supervisor Dashboard" subtitle={company?.name} />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         <StatCard label="Assigned Students" value={stats?.assigned_students ?? 0} to="/supervisor/students" color="bg-blue-600" />
         <StatCard label="Pending Logs" value={stats?.pending_logs ?? 0} to="/supervisor/logs/pending" color="bg-amber-500" />
         <StatCard label="Evaluations" value={stats?.total_evaluations ?? 0} to="/supervisor/evaluations" color="bg-green-600" />

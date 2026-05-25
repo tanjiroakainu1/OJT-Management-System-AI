@@ -37,7 +37,7 @@ export default function CoordinatorViewApplication() {
           <div><dt className="dt-label">Status</dt><dd><StatusBadge status={app.status} /></dd></div>
         </dl>
         {app.status === 'pending' && (
-          <div className="flex gap-2 mt-4">
+          <div className="btn-row mt-4">
             <Button variant="success" onClick={() => handle('approved')}>Approve</Button>
             <Button variant="danger" onClick={() => handle('rejected')}>Reject</Button>
           </div>

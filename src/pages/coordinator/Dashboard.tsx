@@ -12,7 +12,7 @@ export default function CoordinatorDashboard() {
   return (
     <>
       <PageHeader title="Coordinator Dashboard" subtitle="OJT Management Panel" />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         <StatCard label="Total Students" value={stats.student_count} to="/coordinator/students" color="bg-blue-600" />
         <StatCard label="Pending Applications" value={stats.pending_apps} to="/coordinator/applications?status=pending" color="bg-amber-500" />
         <StatCard label="Approved OJTs" value={stats.approved_apps} to="/coordinator/applications?status=approved" color="bg-green-600" />
@@ -40,7 +40,7 @@ export default function CoordinatorDashboard() {
           </Table>
         </Card>
         <Card title="Quick Actions">
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
             <Link to="/coordinator/requirements/new" className="quick-action-btn">Add Requirement</Link>
             <Link to="/coordinator/reports" className="quick-action-btn">Reports</Link>
             <Link to="/coordinator/evaluations" className="quick-action-btn">Evaluations</Link>

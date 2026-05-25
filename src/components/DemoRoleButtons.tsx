@@ -52,7 +52,7 @@ export function DemoRoleButtons({
   quickLogin = false,
 }: DemoRoleButtonsProps) {
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
       {DEMO_ACCOUNTS.map((account) => {
         const meta = ROLE_META[account.role];
         const isActive = activeEmail === account.email;
@@ -68,7 +68,7 @@ export function DemoRoleButtons({
                 void onQuickLogin(account.email, account.password);
               }
             }}
-            className={`group flex flex-col items-start rounded-xl border p-3 text-left transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+            className={`group flex flex-col items-start rounded-xl border p-3 sm:p-4 min-h-[88px] text-left transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation
               ${meta.border} ${meta.bg} ${meta.hover}
               ${isActive ? 'ring-2 ring-fuchsia-400/50 scale-[1.02]' : ''}`}
           >

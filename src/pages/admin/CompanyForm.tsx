@@ -37,7 +37,7 @@ export default function CompanyForm() {
           <Input label="Contact Person" value={form.contact_person} onChange={(e) => setForm({ ...form, contact_person: e.target.value })} required />
           <Input label="Contact Number" value={form.contact_number} onChange={(e) => setForm({ ...form, contact_number: e.target.value })} required />
           <Input label="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
-          <div className="flex gap-2">
+          <div className="btn-row">
             <Button type="submit">{isEdit ? 'Save' : 'Create'}</Button>
             <Link to="/admin/companies"><Button type="button" variant="secondary">Cancel</Button></Link>
           </div>

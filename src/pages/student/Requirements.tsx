@@ -332,7 +332,7 @@ export default function StudentRequirements() {
               )}
             </div>
 
-            <div className="flex gap-2">
+            <div className="btn-row">
               <Button type="submit" disabled={uploading || !selectedFile}>
                 {uploading
                   ? 'Saving…'

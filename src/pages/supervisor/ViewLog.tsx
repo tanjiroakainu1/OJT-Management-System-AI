@@ -28,7 +28,7 @@ export default function SupervisorViewLog() {
           <div><dt className="dt-label">Activities</dt><dd className="whitespace-pre-wrap">{log.activities}</dd></div>
         </dl>
         {log.status === 'pending' && (
-          <div className="flex gap-2">
+          <div className="btn-row">
             <Button variant="success" onClick={() => handle('approved')}>Approve</Button>
             <Button variant="danger" onClick={() => handle('rejected')}>Reject</Button>
           </div>

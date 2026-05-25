@@ -6,7 +6,7 @@ export const tableCellMuted = 'px-4 py-3 text-sm text-violet-300/70';
 export const tableCellMedium = 'px-4 py-3 text-sm font-medium text-[#f5f3ff]';
 
 const cardShell =
-  'rounded-2xl border border-violet-500/30 bg-[#1a1535] shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_1px_rgba(168,85,247,0.4)] overflow-hidden';
+  'rounded-2xl border border-violet-500/30 bg-[#1a1535] shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_1px_rgba(168,85,247,0.4)] overflow-hidden min-w-0';
 const cardHeader =
   'px-4 py-3 border-b border-violet-500/25 bg-[#221b4a] font-semibold text-[#f5f3ff] tracking-wide';
 
@@ -40,7 +40,7 @@ export function Card({
   return (
     <div className={`${cardShell} ${className}`}>
       {title && <div className={`${cardHeader} font-display`}>{title}</div>}
-      <div className="p-4 text-violet-100/90">{children}</div>
+      <div className="p-4 sm:p-5 text-violet-100/90 min-w-0 overflow-x-auto">{children}</div>
     </div>
   );
 }
@@ -153,15 +153,38 @@ export function Alert({
   );
 }
 
+export function ButtonRow({
+  children,
+  className = '',
+  align = 'start',
+}: {
+  children: React.ReactNode;
+  className?: string;
+  align?: 'start' | 'end' | 'between';
+}) {
+  const alignClass =
+    align === 'end' ? 'justify-end' : align === 'between' ? 'justify-between' : '';
+  return (
+    <div className={`btn-row ${alignClass} ${className}`.trim()}>{children}</div>
+  );
+}
+
 export function Button({
   children,
   type = 'button',
   variant = 'primary',
+  size = 'md',
   className = '',
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
+  size?: 'sm' | 'md' | 'lg';
 }) {
+  const sizes = {
+    sm: 'min-h-[40px] px-3 py-1.5 text-xs',
+    md: 'min-h-[44px] px-4 py-2 text-sm',
+    lg: 'min-h-[48px] px-5 py-2.5 text-base',
+  };
   const variants = {
     primary:
       'bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#e879f9] hover:from-[#a855f7] hover:via-[#e879f9] hover:to-[#f472b6] text-white border border-violet-400/40 shadow-[0_0_24px_rgba(168,85,247,0.35)]',
@@ -177,7 +200,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={`px-4 py-2 rounded-xl font-medium text-sm disabled:opacity-50 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${variants[variant]} ${className}`}
+      className={`inline-flex items-center justify-center shrink-0 rounded-xl font-medium disabled:opacity-50 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] touch-manipulation ${sizes[size]} ${variants[variant]} ${className}`}
       {...props}
     >
       {children}
